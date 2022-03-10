@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.cesarbiods
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: gradle_kotlin
+features: [annotation-api, app-name, data, elasticsearch, graalvm, gradle, h2, http-client, jackson-databind, jdbc-hikari, junit, kafka, kotlin, kotlin-application, kotlin-build, kotlin-extension-functions, logback, micronaut-build, netty-server, openapi, readme, shade, yaml]

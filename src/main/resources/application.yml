@@ -1,0 +1,21 @@
+micronaut:
+  application:
+    name: micronautDemo
+  server:
+    host: 0.0.0.0
+    port: 8080
+datasources:
+  default:
+    url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+    schema-generate: CREATE_DROP
+    dialect: H2
+#elasticsearch.httpHosts: http://localhost:9200,http://127.0.0.2:9200
+netty:
+  default:
+    allocator:
+      max-order: 3
+#jpa.default.properties.hibernate.hbm2ddl.auto: update
+#kafka.bootstrap.servers: localhost:9092
