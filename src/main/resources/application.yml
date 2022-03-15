@@ -13,9 +13,18 @@ datasources:
     schema-generate: CREATE_DROP
     dialect: H2
 #elasticsearch.httpHosts: http://localhost:9200,http://127.0.0.2:9200
+jpa:
+  default:
+    compile-time-hibernate-proxies: true
+    entity-scan:
+      packages: 'com.cesarbiods.jpa'
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
 netty:
   default:
     allocator:
       max-order: 3
-#jpa.default.properties.hibernate.hbm2ddl.auto: update
 #kafka.bootstrap.servers: localhost:9092
