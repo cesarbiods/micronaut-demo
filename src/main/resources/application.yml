@@ -20,6 +20,8 @@ jpa:
       packages: 'com.cesarbiods.jpa'
     properties:
       hibernate:
+        bytecode:
+          provider: none
         hbm2ddl:
           auto: update
         show_sql: true

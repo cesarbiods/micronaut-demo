@@ -3,6 +3,7 @@ package com.cesarbiods.jpa
 import javax.persistence.*
 
 @Entity
+//@GenerateProxy
 @Table(name = "customer")
 data class Customer(
 
