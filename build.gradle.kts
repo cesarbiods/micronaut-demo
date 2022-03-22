@@ -33,11 +33,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     implementation("org.slf4j:slf4j-api:1.7.36")
-//    runtimeOnly("org.slf4j:slf4j-jdk14:1.7.36")
-    runtimeOnly("org.slf4j:slf4j-simple")
+    runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.h2database:h2")
-//    runtimeOnly("org.slf4j:log4j-over-slf4j:1.7.30")
-//    runtimeOnly("org.apache.logging.log4j:log4j-to-slf4j:2.17.2")
     compileOnly("org.graalvm.nativeimage:svm")
 
     implementation("io.micronaut:micronaut-validation")
@@ -49,7 +46,6 @@ dependencies {
 configurations.all {
     exclude("org.apache.logging.log4j", "log4j-api")
     exclude("org.apache.logging.log4j", "log4j-core")
-    exclude("ch.qos.logback", "logback-core")
 }
 
 application {
@@ -83,15 +79,9 @@ graalvmNative {
         named("main") {
             buildArgs.add("--allow-incomplete-classpath")
 //            buildArgs.add("-H:ReflectionConfigurationFiles=resources/reflect-config.json")
-//            buildArgs.add("--initialize-at-run-time=org.apache.logging.slf4j.SLF4JLogger,org.apache.commons.logging.LogAdapter\$Log4jLog,org.hibernate.secure.internal.StandardJaccServiceImpl,org.postgresql.sspi.SSPIClient,org.hibernate.dialect.OracleTypesHelper")
 //            buildArgs.add("--initialize-at-build-time=org.slf4j.simple.SimpleLogger,org.slf4j.LoggerFactory,org.apache.logging.slf4j.SLF4JLogger,org.apache.logging.slf4j.SLF4JLoggerContext,org.apache.logging.log4j.LogManager,org.jboss.logging.Log4j2Logger,org.jboss.logging.Log4j2LoggerProvider,org.jboss.logging.Logger,org.hibernate.secure.internal.StandardJaccServiceImpl,org.postgresql.sspi.SSPIClient,org.hibernate.dialect.OracleTypesHelper")
-//            buildArgs.add("--initialize-at-build-time=org.slf4j.simple.SimpleLogger,org.slf4j.LoggerFactory")
-//            buildArgs.add("--initialize-at-build-time=org.apache.logging,org.jboss.logging,org.hibernate.internal,org.hibernate.query,org.hibernate.jmx.internal,org.hibernate.secure.internal.StandardJaccServiceImpl,org.postgresql.sspi.SSPIClient,org.hibernate.dialect.OracleTypesHelper")
 //            buildArgs.add("--trace-class-initialization=org.apache.logging.log4j.util.PropertySource\$Util")
-//            buildArgs.add("--initialize-at-build-time=org.slf4j.simple.SimpleLogger,org.slf4j.LoggerFactory")
-//            buildArgs.add("--initialize-at-build-time=org.apache.logging.slf4j.SLF4JLogger,org.slf4j.impl.StaticLoggerBinder,org.slf4j.LoggerFactory,ch.qos.logback.classic.Logger,ch.qos.logback.core.spi.AppenderAttachableImpl,ch.qos.logback.core.status.StatusBase,ch.qos.logback.classic.Level,ch.qos.logback.core.status.InfoStatus,ch.qos.logback.classic.PatternLayout,ch.qos.logback.core.CoreConstants")
 //            buildArgs.add("--initialize-at-build-time=org.slf4j.impl.StaticLoggerBinder,org.slf4j.LoggerFactory,ch.qos.logback.classic.Logger,ch.qos.logback.core.spi.AppenderAttachableImpl,ch.qos.logback.core.status.StatusBase,ch.qos.logback.classic.Level,ch.qos.logback.core.status.InfoStatus,ch.qos.logback.classic.PatternLayout,ch.qos.logback.core.CoreConstants")
-//            buildArgs.add("--rerun-class-initialization-at-runtime=org.apache.logging.slf4j.SLF4JLogger")
         }
     }
 }
