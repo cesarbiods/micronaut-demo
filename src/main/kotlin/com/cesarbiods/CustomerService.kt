@@ -3,16 +3,18 @@ package com.cesarbiods
 import com.cesarbiods.dto.CustomerV1
 import com.cesarbiods.jpa.Customer
 import com.cesarbiods.jpa.CustomerRepository
+import com.cesarbiods.kafka.CustomerProducer
 import jakarta.inject.Singleton
 
 @Singleton
-class CustomerService(private val customerRepository: CustomerRepository) {
+class CustomerService(
+    private val customerRepository: CustomerRepository,
+    private val customerProducer: CustomerProducer
+) {
 
     fun createCustomer(customer: CustomerV1): CustomerV1 {
-        var entity = Customer(null, customer.firstName, customer.lastName, customer.age)
-        entity = customerRepository.save(entity)
-        println(entity)
-        return CustomerV1(entity.firstName, entity.lastName, entity.age)
+        customerProducer.createCustomer(customer.hashCode(), customer)
+        return customer
     }
 
     fun getCustomer(id: Long): CustomerV1 {
