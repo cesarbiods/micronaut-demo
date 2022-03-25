@@ -1,29 +1,22 @@
-## Micronaut 3.3.4 Documentation
+# Micronaut/GraalVM proof of concept
 
-- [User Guide](https://docs.micronaut.io/3.3.4/guide/index.html)
-- [API Reference](https://docs.micronaut.io/3.3.4/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/3.3.4/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
----
+This project served as an experiment to determine the feasibility of moving our spring services to micronaut to leverage
+GraalVM's native image mode. Having used JPA/Hibernate, kafka, and Jackson it was deemed sufficient and so the source
+code lies here as a reference for converting future services/libraries.
 
-- [Shadow Gradle Plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
-## Feature elasticsearch documentation
+## Stack
 
-- [Micronaut Elasticsearch Driver documentation](https://micronaut-projects.github.io/micronaut-elasticsearch/latest/guide/index.html)
+- Micronaut
+- Kotlin
+- Gradle (kotlin)
+- Logback
+- Jackson
+- Jpa/Hibernate
+- Kafka
+- Yaml properties
+- GraalVM JVM and native image modes
 
+## How to Run
 
-## Feature jdbc-hikari documentation
-
-- [Micronaut Hikari JDBC Connection Pool documentation](https://micronaut-projects.github.io/micronaut-sql/latest/guide/index.html#jdbc)
-
-
-## Feature kafka documentation
-
-- [Micronaut Kafka Messaging documentation](https://micronaut-projects.github.io/micronaut-kafka/latest/guide/index.html)
-
-
-## Feature http-client documentation
-
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
-
-
+1. Execute gradle task `dockerBuildNative`
+2. `docker-compose up`

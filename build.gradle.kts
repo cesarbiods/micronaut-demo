@@ -81,7 +81,7 @@ graalvmNative {
 //            buildArgs.add("-H:ReflectionConfigurationFiles=resources/reflect-config.json")
 //            buildArgs.add("--initialize-at-build-time=org.slf4j.simple.SimpleLogger,org.slf4j.LoggerFactory,org.apache.logging.slf4j.SLF4JLogger,org.apache.logging.slf4j.SLF4JLoggerContext,org.apache.logging.log4j.LogManager,org.jboss.logging.Log4j2Logger,org.jboss.logging.Log4j2LoggerProvider,org.jboss.logging.Logger,org.hibernate.secure.internal.StandardJaccServiceImpl,org.postgresql.sspi.SSPIClient,org.hibernate.dialect.OracleTypesHelper")
 //            buildArgs.add("--trace-class-initialization=org.apache.logging.log4j.util.PropertySource\$Util")
-//            buildArgs.add("--initialize-at-build-time=org.slf4j.impl.StaticLoggerBinder,org.slf4j.LoggerFactory,ch.qos.logback.classic.Logger,ch.qos.logback.core.spi.AppenderAttachableImpl,ch.qos.logback.core.status.StatusBase,ch.qos.logback.classic.Level,ch.qos.logback.core.status.InfoStatus,ch.qos.logback.classic.PatternLayout,ch.qos.logback.core.CoreConstants")
+//            buildArgs.add("--initialize-at-run-time=org.slf4j.impl.StaticLoggerBinder,org.slf4j.LoggerFactory,ch.qos.logback.classic.Logger,ch.qos.logback.core.spi.AppenderAttachableImpl,ch.qos.logback.core.status.StatusBase,ch.qos.logback.classic.Level,ch.qos.logback.core.status.InfoStatus,ch.qos.logback.classic.PatternLayout,ch.qos.logback.core.CoreConstants")
         }
     }
 }
